@@ -48,7 +48,7 @@ class HashTableWithSet {
   }
 }
 
-const randomStrings = Array.from({ length: 1000 }, generateRandomString);
+const randomStrings = Array.from({ length: 1000 }, generateRandomString); // Добави в {length: колко на брой думи искаш да създадеш } - целта е тестване с различен размер на входни данни.
 
 const dictionaryArray = new HashTableWithArray();
 const dictionarySet = new HashTableWithSet();
