@@ -20,6 +20,11 @@ class HashTableWithArray {
   }
 
   getWords(startingLetter) {
+    console.log(
+      `Words: ${this.table.get(startingLetter.toLowerCase()).length}` ||
+        `Words:0`
+    );
+
     return this.table.get(startingLetter.toLowerCase()) || [];
   }
 }
@@ -44,11 +49,14 @@ class HashTableWithSet {
   }
 
   getWords(startingLetter) {
+    console.log(
+      `Words: ${this.table.get(startingLetter.toLowerCase()).size}` || `Words:0`
+    );
     return this.table.get(startingLetter.toLowerCase()) || new Set();
   }
 }
 
-const randomStrings = Array.from({ length: 1000 }, generateRandomString); // Добави в {length: колко на брой думи искаш да създадеш } - целта е тестване с различен размер на входни данни.
+const randomStrings = Array.from({ length: 100000 }, generateRandomString); // Добави в {length: колко на брой думи искаш да създадеш } - целта е тестване с различен размер на входни данни.
 
 const dictionaryArray = new HashTableWithArray();
 const dictionarySet = new HashTableWithSet();
@@ -59,7 +67,7 @@ randomStrings.forEach((word) => {
 });
 
 console.log("Using Array:", dictionaryArray.getWords("A"));
-console.log("Using Set:", [...dictionarySet.getWords("A")]);
+console.log("Using Set:", [...dictionarySet.getWords("B")]);
 
 function generateRandomString() {
   const firstChar = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
