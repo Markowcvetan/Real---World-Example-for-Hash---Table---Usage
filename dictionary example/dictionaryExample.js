@@ -66,8 +66,8 @@ randomStrings.forEach((word) => {
   dictionarySet.insert(word);
 });
 
-console.log("Using Array:", dictionaryArray.getWords("A"));
-console.log("Using Set:", [...dictionarySet.getWords("B")]);
+// console.log("Using Array:", dictionaryArray.getWords("A"));
+// console.log("Using Set:", [...dictionarySet.getWords("B")]);
 
 function generateRandomString() {
   const firstChar = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
@@ -80,4 +80,4 @@ function generateRandomString() {
   return firstChar + restOfString;
 }
 
-console.log(`The length of this list is:${randomStrings.length}`);
+// console.log(`The length of this list is:${randomStrings.length}`);
